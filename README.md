@@ -40,11 +40,30 @@ cd westwing
 
     **Please wait this might take a several minutes...**
 
-2. Open your favorite browser :
+2. Enter the php container :
+
+    ```sh
+    docker exec -it westwing_php bash
+    cd html
+    ```
+
+3. Instal the dependencies :
+
+    ```sh
+    composer install
+    ```
+
+4. Run migrations :
+
+    ```sh
+    php artisan migrate
+    ```
+
+5. Open your favorite browser :
 
     * [http://localhost:8000](http://localhost:8000/)
 
-3. Stop and clear services
+## Stop and clear services
 
     ```sh
     sudo docker-compose down -v
