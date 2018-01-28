@@ -1,0 +1,30 @@
+version: '3'
+services:
+    web:
+        image: nginx:alpine
+        container_name: westwing_web
+        volumes:
+            - "./build/nginx/default.conf:/etc/nginx/conf.d/default.conf"
+            - "./code:/var/www/html"
+        ports:
+            - "8000:80"
+        restart: always
+        depends_on:
+            - php
+            - db
+    php:
+        image: cyberduck/php-fpm-laravel
+        container_name: westwing_php
+        restart: always
+        volumes:
+            - "./code:/var/www/html"
+    db:
+        image: mysql
+        container_name: westwing_db
+        environment:
+            - MYSQL_DATABASE=westwing
+            - MYSQL_ROOT_PASSWORD=root
+        ports:
+            - "3306:3306"
+        volumes:
+            - "./data/db/mysql:/var/lib/mysql"

@@ -1,0 +1,8 @@
+.warning{
+  border:1px solid #c44d58 !important;
+}
+.invalid-field{
+  color:#c44d58 !important;
+  margin-top:-2px !important;
+  margin-bottom:-6px !important;
+}
