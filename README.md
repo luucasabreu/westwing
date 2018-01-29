@@ -65,6 +65,6 @@ cd westwing
 
 ## Stop and clear services
 
-    ```sh
-    sudo docker-compose down -v
-    ```
+```sh
+sudo docker-compose down -v
+```
